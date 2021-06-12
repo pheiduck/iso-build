@@ -76,10 +76,11 @@ jobs:
         run: |          
           sudo git clone https://gitlab.manjaro.org/packages/core/pacman.git
           cd pacman
-          sudo wget https://sources.archlinux.org/other/pacman/pacman-5.2.2.tar.gz
-          sudo tar -xvf pacman-5.2.2.tar.gz
-          cd pacman-5.2.2
+          sudo wget https://sources.archlinux.org/other/pacman/pacman-6.0.0.tar.xz
+          sudo tar -xvf pacman-6.0.0.tar.xz
+          cd pacman-6.0.0
           sudo patch -p1 -i ../pacman-sync-first-option.patch
+          sudo patch -p1 -i ../0001-pactree-fix-compilation-with-pacman-6.patch
           sudo ./configure --prefix=/usr --sysconfdir=/etc \
             --localstatedir=/var --enable-doc \
             --with-scriptlet-shell=/usr/bin/bash \
