@@ -42,7 +42,7 @@ jobs:
         ###### EDIT HERE ######
         EDITION: [cinnamon]
         BRANCH: [stable]
-        SCOPE: [full]
+        SCOPE: [minimal, full]
         #######################
     steps:
       - 
