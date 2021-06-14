@@ -1,7 +1,7 @@
 # iso-build
 Updated Manjaro Cinnamon CE
 
-## How to use the ISO File:
+## How to use the ISO file:
 
 1. The z01 and zip file must be combined. <br>
 `cat manjaro-cinnamon-21.06-development-210612-linux510.iso.z01 manjaro-cinnamon-21.06-development-210612-linux510.iso.zip > manjaro-cinnamon-21.06-development-210612-linux510.zip`
@@ -20,3 +20,4 @@ file #1:  bad zipfile offset (local header sig):  2044723204
   (attempting to re-compensate)
   inflating: manjaro-cinnamon-21.06-development-210612-linux510.iso  
 ```
+3. 🎉 Finally, you can flash the ISO file to a USB drive or use it in a virtual machine.
