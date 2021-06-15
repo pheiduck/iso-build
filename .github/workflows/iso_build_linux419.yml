@@ -1,4 +1,4 @@
-name: iso_build
+name: iso_build_linux419
 on:
   workflow_dispatch:
   schedule:
