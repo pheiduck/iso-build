@@ -28,7 +28,7 @@ jobs:
         with:
           tag_name: ${{ steps.time.outputs.time }}
           release_name: Release ${{ steps.time.outputs.time }}
-                    body: |
+          body: |
             Linux Kernel:
             - linux414
           draft: false
