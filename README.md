@@ -2,7 +2,7 @@
 Updated Manjaro Cinnamon CE
 
 Releases:
-<a href="">Linux 5.12</a>
+<a href="https://github.com/pheiduck/iso-build/releases/tag/202106161344">Linux 5.12</a>
 <a href="https://github.com/pheiduck/iso-build/releases/tag/202106160255">Linux 5.10</a>
 <a href="https://github.com/pheiduck/iso-build/releases/tag/202106160258">Linux 5.4</a>
 <a href="https://github.com/pheiduck/iso-build/releases/tag/202106160257">Linux 4.19</a>
