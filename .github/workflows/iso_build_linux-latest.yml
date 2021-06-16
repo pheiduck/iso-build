@@ -28,6 +28,9 @@ jobs:
         with:
           tag_name: ${{ steps.time.outputs.time }}
           release_name: Release ${{ steps.time.outputs.time }}
+          body: |
+            Linux Kernel:
+            - linux512
           draft: false
           prerelease: false
     outputs:
