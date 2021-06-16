@@ -2,7 +2,7 @@ name: iso_build_linux419
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 2 * * *'
+    - cron:  '45 1 * * *'
 
 jobs:
   prepare_release:
