@@ -2,7 +2,7 @@ name: iso_build_linux-latest
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 2 * * *'
+    - cron:  '0 3 * * *'
 
 jobs:
   prepare_release:
