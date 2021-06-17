@@ -1,16 +1,6 @@
 # iso-build
 Updated Manjaro Cinnamon CE
 
-Releases:
-<a href="https://github.com/pheiduck/iso-build/releases/tag/202106170324">Linux 5.12</a>
-<a href="https://github.com/pheiduck/iso-build/releases/tag/202106170259">Linux 5.10</a>
-<a href="https://github.com/pheiduck/iso-build/releases/tag/202106170256">Linux 5.4</a>
-<a href="https://github.com/pheiduck/iso-build/releases/tag/202106170221">Linux 4.19</a>
-<a href="https://github.com/pheiduck/iso-build/releases/tag/202106170216">Linux 4.14</a>
-
-
-
-
 ## How to use the ISO file:
 
 1. The z01 and zip file must be combined. <br>
