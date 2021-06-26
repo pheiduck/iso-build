@@ -142,9 +142,9 @@ jobs:
       -
         name: Install MkInitcpio
         run: |          
-          sudo wget https://git.archlinux.org/mkinitcpio.git/snapshot/mkinitcpio-29.tar.gz
-          sudo tar -xf mkinitcpio-29.tar.gz
-          sudo make -C mkinitcpio-29 install
+          sudo wget https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-30.tar.gz
+          sudo tar -xf mkinitcpio-30.tar.gz
+          sudo make -C mkinitcpio-30 install
           sudo sed -i -e 's|File|Path|' /usr/share/libalpm/hooks/*hook
       -
         name: Install Manjaro-Tools
