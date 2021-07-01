@@ -257,6 +257,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
+        name: Cleanup Releases
         uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
           repo: pheiduck/iso-build
