@@ -76,12 +76,13 @@ jobs:
 
       -
         name: Install Pacman
-        run: |          
+        run: |
+          pkgver=5.2.2
           sudo git clone https://gitlab.manjaro.org/packages/core/pacman.git
           cd pacman
-          sudo wget https://sources.archlinux.org/other/pacman/pacman-5.2.2.tar.gz
-          sudo tar -xvf pacman-5.2.2.tar.gz
-          cd pacman-5.2.2
+          sudo wget https://sources.archlinux.org/other/pacman/pacman-$pkgver.tar.gz
+          sudo tar -xvf pacman-$pkgver.tar.gz
+          cd pacman-$pkgver
           sudo patch -p1 -i ../pacman-sync-first-option.patch
           sudo ./configure --prefix=/usr --sysconfdir=/etc \
             --localstatedir=/var --enable-doc \
@@ -141,10 +142,11 @@ jobs:
           install_cal_tools
       -
         name: Install MkInitcpio
-        run: |          
-          sudo wget https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-30.tar.gz
-          sudo tar -xf mkinitcpio-30.tar.gz
-          sudo make -C mkinitcpio-30 install
+        run: |
+          pkgver=30
+          sudo wget https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-$pkgver.tar.gz
+          sudo tar -xf mkinitcpio-$pkgver.tar.gz
+          sudo make -C mkinitcpio-$pkgver install
           sudo sed -i -e 's|File|Path|' /usr/share/libalpm/hooks/*hook
       -
         name: Install Manjaro-Tools
@@ -257,6 +259,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
+        name: Cleanup Releases
         uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
           repo: pheiduck/iso-build
