@@ -92,8 +92,8 @@ jobs:
                      -Dscriptlet-shell=/usr/bin/bash \
                      -Dldconfig=/usr/bin/ldconfig \
                      build
-           sudo meson compile -C build
-           sudo meson install -C build
+          sudo meson compile -C build
+          sudo meson install -C build
           cd ..
           sudo install -m644 pacman.conf /etc/pacman.conf
           sudo install -m644 makepkg.conf /etc/
