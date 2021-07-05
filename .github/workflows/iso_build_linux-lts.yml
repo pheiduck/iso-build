@@ -130,7 +130,8 @@ jobs:
           sudo make -C arch-install-scripts-$pkgver check
           sudo make -C arch-install-scripts-$pkgver PREFIX=/usr install
           
-          sudo wget https://gitlab.manjaro.org/applications/pacman-mirrors/-/raw/v4.21.x-stable/conf/pacman-mirrors.conf -O /etc/pacman-mirrors.conf
+          branch=v4.21.x-stable
+          sudo wget https://gitlab.manjaro.org/applications/pacman-mirrors/-/raw/$branch/conf/pacman-mirrors.conf -O /etc/pacman-mirrors.conf
       -
         name: Install Calamares-Tools
         run: |          
