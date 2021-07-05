@@ -173,10 +173,10 @@ jobs:
           EDITION: ${{ matrix.EDITION }}
           BRANCH: ${{ matrix.BRANCH }}
           SCOPE: ${{ matrix.SCOPE }}
-          VERSION: ${{ steps.time.outputs.time }}-development
           ###### EDIT HERE ######
           KERNEL: "linux512"
-          CODE_NAME: "Community-Build"
+          CODE_NAME: "Ornara"
+          VERSION: "21.0.7"
           #######################
         run: |                
           [ "$SCOPE" == "minimal" ] && unset SCOPE
