@@ -38,7 +38,7 @@ jobs:
       release_id: ${{ steps.release.outputs.id }}
 
   release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: prepare_release    
     strategy:
       matrix:
