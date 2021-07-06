@@ -1,5 +1,5 @@
 # iso-build
-Updated Manjaro Cinnamon CE
+Updated Manjaro Cinnamon CE (Daily Rebuilds)
 
 ## How to use the ISO file:
 
