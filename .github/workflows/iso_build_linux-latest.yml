@@ -30,7 +30,7 @@ jobs:
           release_name: Release ${{ steps.time.outputs.time }}
           body: |
             Linux Kernel:
-            - linux512
+            - linux513
           draft: false
           prerelease: false
     outputs:
@@ -67,7 +67,7 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v1.1
         with:
-          format: 'YY.0.M'          
+          format: 'YY.1'          
       -
         name: Install Build-Dependencies
         run: |
@@ -175,8 +175,8 @@ jobs:
           BRANCH: ${{ matrix.BRANCH }}
           SCOPE: ${{ matrix.SCOPE }}
           ###### EDIT HERE ######
-          KERNEL: "linux512"
-          CODE_NAME: "Ornara"
+          KERNEL: "linux513"
+          CODE_NAME: "Pahvo"
           VERSION: ${{ steps.time.outputs.time }}
           #######################
         run: |                
