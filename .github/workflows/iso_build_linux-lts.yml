@@ -67,7 +67,7 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v1.1
         with:
-          format: 'YY.0.M'          
+          format: 'YY.1'          
       -
         name: Install Build-Dependencies
         run: |
@@ -176,7 +176,7 @@ jobs:
           SCOPE: ${{ matrix.SCOPE }}
           ###### EDIT HERE ######
           KERNEL: "linux510"
-          CODE_NAME: "Ornara"
+          CODE_NAME: "Pahvo"
           VERSION: ${{ steps.time.outputs.time }}
           #######################
         run: |                
