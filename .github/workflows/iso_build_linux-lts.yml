@@ -82,9 +82,9 @@ jobs:
           pkgver=6.0.0
           sudo git clone https://gitlab.manjaro.org/packages/core/pacman.git
           cd pacman
-          sudo wget https://sources.archlinux.org/other/pacman/pacman-$pkgver.tar.xz
-          sudo tar -xvf pacman-$pkgver.tar.xz
-          cd pacman-$pkgver
+          sudo wget https://gitlab.archlinux.org/pacman/pacman/-/archive/v$pkgver/pacman-v$pkgver.tar.gz
+          sudo tar -xvf pacman-v$pkgver.tar.gz
+          cd pacman-v$pkgver
           sudo patch -p1 -i ../pacman-sync-first-option.patch
           sudo meson --prefix=/usr \
                      --buildtype=plain \
