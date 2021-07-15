@@ -275,10 +275,3 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      -  
-        name: Cleanup Workflow
-        uses: boredland/action-purge-workflow-runs@main
-        with:
-          days-old: 5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
