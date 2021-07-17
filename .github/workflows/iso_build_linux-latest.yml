@@ -144,9 +144,9 @@ jobs:
         name: Install MkInitcpio
         run: |
           pkgver=30
-          sudo wget https://gitlab.archlinux.org/mkinitcpio/mkinitcpio/-/archive/v$pkgver/mkinitcpio-v$pkgver.tar.gz
-          sudo tar -xf mkinitcpio-v$pkgver.tar.gz
-          sudo make -C mkinitcpio-v$pkgver install
+          sudo wget https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-$pkgver.tar.gz
+          sudo tar -xf mkinitcpio-$pkgver.tar.gz
+          sudo make -C mkinitcpio-$pkgver install
           sudo sed -i -e 's|File|Path|' /usr/share/libalpm/hooks/*hook
       -
         name: Install Manjaro-Tools
