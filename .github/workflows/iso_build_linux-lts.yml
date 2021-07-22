@@ -44,7 +44,7 @@ jobs:
       matrix:
         ###### EDIT HERE ######
         EDITION: [cinnamon]
-        BRANCH: [stable]
+        BRANCH: [unstable]
         SCOPE: [minimal, full]
         #######################
     steps:
