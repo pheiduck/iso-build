@@ -1,5 +1,6 @@
 # iso-build
 Updated Manjaro Cinnamon CE (Daily Rebuilds)
+<br> Based on this <a href="https://github.com/pheiduck/iso-profiles">iso-profiles<a/>
 
 ## How to use the ISO file:
 
