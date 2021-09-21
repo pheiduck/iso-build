@@ -10,19 +10,19 @@ jobs:
     steps:
       - 
         name: Prepare Cancel Workflow
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@main
         with:
           access_token: ${{ github.token }}
       - 
         name: Get current time
         id: time
-        uses: nanzm/get-time-action@v1.1
+        uses: nanzm/get-time-action@master
         with:
           format: 'YYYYMMDDHHmm'
       - 
         name: Prepare Release
         id: release
-        uses: actions/create-release@v1.1.4
+        uses: actions/create-release@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -50,12 +50,12 @@ jobs:
     steps:
       - 
         name: Prepare Cancel Workflow
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@main
         with:
           access_token: ${{ github.token }}
       - 
         name: Checkout ISO-Profiles
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@main
         with:
           ###### EDIT HERE ######
           repository: pheiduck/iso-profiles
@@ -201,7 +201,7 @@ jobs:
       - 
         name: Upload Release
         id: upload_release_zip
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -212,14 +212,14 @@ jobs:
       - 
         name: Check for split-zip
         id: check_files
-        uses: andstor/file-existence-action@v1.0.1
+        uses: andstor/file-existence-action@master
         with:
           files: ${{ env.FILE_PATH }}.z01
           allow_failure: false
       - 
         name: Upload Release (split-zip)
         id: upload_release_z01
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@main
         if: steps.check_files.outputs.files_exists == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -231,7 +231,7 @@ jobs:
       - 
         name: Upload Checksum file
         id: upload_sha256
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -242,7 +242,7 @@ jobs:
       - 
         name: Upload Package list
         id: upload_pkg
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -253,14 +253,14 @@ jobs:
       - 
         name: Rollback Release
         if: failure()
-        uses: author/action-rollback@stable
+        uses: author/action-rollback@master
         with:
           release_id: ${{ needs.prepare_release.outputs.release_id }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Cleanup Releases
-        uses: dev-drprasad/delete-older-releases@v0.2.0
+        uses: dev-drprasad/delete-older-releases@master
         with:
           ###### EDIT HERE ######
           repo: pheiduck/iso-build
