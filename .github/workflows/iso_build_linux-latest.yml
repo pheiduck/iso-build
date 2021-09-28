@@ -46,6 +46,7 @@ jobs:
         EDITION: [cinnamon]
         BRANCH: [stable]
         SCOPE: [minimal, full]
+        KERNEL: [linux514]
         #######################
     steps:
       - 
@@ -168,9 +169,7 @@ jobs:
           EDITION: ${{ matrix.EDITION }}
           BRANCH: ${{ matrix.BRANCH }}
           SCOPE: ${{ matrix.SCOPE }}
-          ###### EDIT HERE ######
-          KERNEL: "linux514"
-          #######################
+          KERNEL: ${{ matrix.KERNEL}}
         run: |                
           [ "$SCOPE" == "minimal" ] && unset SCOPE
                     

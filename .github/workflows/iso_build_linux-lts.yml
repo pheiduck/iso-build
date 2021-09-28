@@ -30,6 +30,7 @@ jobs:
           release_name: Release ${{ steps.time.outputs.time }}
           body: |
             Linux Kernel:
+            - linux54
             - linux510
           draft: false
           prerelease: false
@@ -46,6 +47,7 @@ jobs:
         EDITION: [cinnamon]
         BRANCH: [stable]
         SCOPE: [minimal, full]
+        KERNEL: [linux54, linux510]
         #######################
     steps:
       - 
@@ -168,9 +170,7 @@ jobs:
           EDITION: ${{ matrix.EDITION }}
           BRANCH: ${{ matrix.BRANCH }}
           SCOPE: ${{ matrix.SCOPE }}
-          ###### EDIT HERE ######
-          KERNEL: "linux510"
-          #######################
+          KERNEL: ${{matrix.KERNEL}}
         run: |                
           [ "$SCOPE" == "minimal" ] && unset SCOPE
                     
