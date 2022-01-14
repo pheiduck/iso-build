@@ -108,7 +108,6 @@ jobs:
           sudo install -m0644 manjaro-trusted /usr/share/pacman/keyrings/
           cd ..
           
-          sudo git clone https://gitlab.archlinux.org/archlinux/archlinux-keyring.git
           mkdir -p archlinux-keyring
           cd archlinux-keyring
           wget https://archlinux.org/packages/core/any/archlinux-keyring/download -O /tmp/archlinux-keyring.tar.zst
