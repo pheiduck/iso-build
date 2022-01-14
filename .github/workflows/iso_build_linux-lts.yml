@@ -69,7 +69,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt dist-upgrade
-          sudo apt install gdisk zip systemd-container bmap-tools asciidoc libarchive-tools git build-essential cmake libarchive-dev pkg-config libcurl4-openssl-dev libgpgme-dev libssl-dev fakeroot dh-autoreconf haveged os-prober kwalify dosfstools libisoburn1 squashfs-tools docbook2x doxygen python3-pip
+          sudo apt install gdisk zip systemd-container bmap-tools asciidoc libarchive-tools git build-essential cmake libarchive-dev pkg-config libcurl4-openssl-dev libgpgme-dev libssl-dev fakeroot dh-autoreconf haveged os-prober kwalify dosfstools libisoburn1 squashfs-tools docbook2x doxygen python3-pip zstd
           sudo pip3 install meson
           sudo pip3 install ninja
       -
@@ -99,17 +99,20 @@ jobs:
           cd ..
       -
         name: Install Keyrings
-        run: |          
+        run: |
+          sudo install -dm755 /usr/share/pacman/keyrings/
           sudo git clone https://gitlab.manjaro.org/packages/core/manjaro-keyring.git
           cd manjaro-keyring
-          sudo install -dm755 /usr/share/pacman/keyrings/
           sudo install -m0644 manjaro.gpg /usr/share/pacman/keyrings/
           sudo install -m0644 manjaro-trusted /usr/share/pacman/keyrings/
           sudo install -m0644 manjaro-trusted /usr/share/pacman/keyrings/
           cd ..
           
           sudo git clone https://gitlab.archlinux.org/archlinux/archlinux-keyring.git
+          mkdir -p archlinux-keyring
           cd archlinux-keyring
+          wget https://archlinux.org/packages/core/any/archlinux-keyring/download -O /tmp/archlinux-keyring.tar.zst
+          tar --use-compress-program=unzstd --strip-components=4 --wildcards -xvf /tmp/archlinux-keyring.tar.zst usr/share/pacman/keyrings/*
           sudo install -m0644 archlinux.gpg /usr/share/pacman/keyrings/
           sudo install -m0644 archlinux-trusted /usr/share/pacman/keyrings/
           sudo install -m0644 archlinux-revoked /usr/share/pacman/keyrings/
