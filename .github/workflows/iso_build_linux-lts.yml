@@ -215,7 +215,7 @@ jobs:
       - 
         name: Check for split-zip
         id: check_files
-        uses: andstor/file-existence-action@master
+        uses: andstor/file-existence-action@main
         with:
           files: ${{ env.FILE_PATH }}.z01
           allow_failure: false
