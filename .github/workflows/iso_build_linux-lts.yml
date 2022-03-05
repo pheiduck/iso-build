@@ -70,9 +70,9 @@ jobs:
           sudo /bin/bash -c "$(curl -sL https://git.io/vokNn)"
           sudo apt-fast update
           sudo apt-fast dist-upgrade -y
-          sudo apt-fast install -y gdisk zip systemd-container bmap-tools asciidoc libarchive-tools git build-essential cmake libarchive-dev pkg-config libcurl4-openssl-dev libgpgme-dev libssl-dev fakeroot dh-autoreconf haveged os-prober kwalify dosfstools libisoburn1 squashfs-tools docbook2x doxygen python3-pip zstd
-          sudo pip3 install meson
-          sudo pip3 install ninja
+          sudo apt-fast install -y gdisk zip systemd-container bmap-tools asciidoc libarchive-tools git build-essential cmake libarchive-dev pkg-config libcurl4-openssl-dev libgpgme-dev libssl-dev fakeroot dh-autoreconf haveged os-prober kwalify dosfstools libisoburn1 squashfs-tools docbook2x doxygen zstd
+          sudo python3 -m pip install meson
+          sudo python3 -m pip install ninja
       -
         name: Install Pacman
         run: |
