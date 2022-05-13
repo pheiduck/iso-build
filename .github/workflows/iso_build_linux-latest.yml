@@ -30,8 +30,8 @@ jobs:
           release_name: Release ${{ steps.time.outputs.time }}
           body: |
             Linux Kernel:
-            - linux516
             - linux517
+            - linux518
           draft: false
           prerelease: false
     outputs:
@@ -47,7 +47,7 @@ jobs:
         EDITION: [cinnamon]
         BRANCH: [stable]
         SCOPE: [minimal, full]
-        KERNEL: [linux516, linux517]
+        KERNEL: [linux517, linux518]
         #######################
     steps:
       - 
